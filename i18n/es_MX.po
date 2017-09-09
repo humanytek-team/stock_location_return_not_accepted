@@ -1,0 +1,198 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_location_return_not_accepted
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e-20170207\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-09 15:27+0000\n"
+"PO-Revision-Date: 2017-09-09 11:54-0400\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.ui.view,arch_db:stock_location_return_not_accepted.view_stock_return_not_accepted_picking_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,help:stock_location_return_not_accepted.field_stock_picking_location_dest_return_location
+msgid "Check this box to allow using this location as a return location."
+msgstr "Marque esta casilla para permitir el uso de esta ubicación como ubicación de devolución."
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_create_uid
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_create_date
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_display_name
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_display_name
+msgid "Display Name"
+msgstr "Nombre desplegado"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_id
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model,name:stock_location_return_not_accepted.model_stock_location
+msgid "Inventory Locations"
+msgstr "Ubicaciones de Inventario"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_location_dest_return_location
+msgid "Is a Return Location?"
+msgstr "Es una ubicación de devolución?"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_location_return_not_accepted_location
+msgid "Is a location of returns not accepted ?"
+msgstr "Es una ubicación de devoluciones no aceptadas ?"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking___last_update
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line___last_update
+msgid "Last Modified on"
+msgstr "Ultima modificacion realizada"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_write_uid
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualizacion por"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_write_date
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización realizada"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_location_id
+msgid "Location of Returns not accepted"
+msgstr "Ubicación de devoluciones no aceptadas"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_move_id
+msgid "Move"
+msgstr "Movimiento"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_product_return_not_accepted_moves
+msgid "Moves"
+msgstr "Movimientos"
+
+#. module: stock_location_return_not_accepted
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:74
+#, python-format
+msgid "No products to return (only lines in Done state and not fully returned yet can be returned)!"
+msgstr "No hay productos para aplicarle devolución no aceptada (solo lineas en estado Hecho y no establecida como devolución no aceptada aplican)"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_move_origin_returned_not_accepted_move_id
+msgid "Origin of return not accepted move"
+msgstr "Origen del movimiento de devolución no aceptada"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model,name:stock_location_return_not_accepted.model_stock_return_not_accepted_picking
+msgid "Picking of return not accepted"
+msgstr "Transferencia de devolución no aceptada"
+
+#. module: stock_location_return_not_accepted
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:171
+#, python-format
+msgid "Picking of returns not accepted"
+msgstr "Transferencia de devoluciones no aceptadas"
+
+#. module: stock_location_return_not_accepted
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:148
+#, python-format
+msgid "Please specify at least one non-zero quantity."
+msgstr "Por favor especifique al menos una cantidad distinta a cero"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.ui.view,arch_db:stock_location_return_not_accepted.view_picking_return_not_accepted_form
+#: model:ir.ui.view,arch_db:stock_location_return_not_accepted.view_stock_return_not_accepted_picking_form
+msgid "Return not accepted"
+msgstr "Devolución no aceptada"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model,name:stock_location_return_not_accepted.model_stock_move
+msgid "Stock Move"
+msgstr "Moviemiento de stock"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model,name:stock_location_return_not_accepted.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.actions.act_window,name:stock_location_return_not_accepted.act_stock_return_not_accepted_picking
+msgid "Transfer of return not accepted"
+msgstr "Transferencia de devolución no aceptada"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_wizard_id
+msgid "Wizard"
+msgstr "Asistente"
+
+#. module: stock_location_return_not_accepted
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:122
+#, python-format
+msgid "You have manually created product lines, please delete them to proceed"
+msgstr "Se han creado manualmente lineas de productos, por favor elimínelas para proceder"
+
+#. module: stock_location_return_not_accepted
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:48
+#, python-format
+msgid "You may only apply returns not accepted of one return picking at a time!"
+msgstr "Puede solo aplicar devoluciones no aceptadas de una transferencia de devolución a la vez!"
+
+#. module: stock_location_return_not_accepted
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:58
+#, python-format
+msgid "You may only apply returns not accepted of return pickings that are Done!"
+msgstr "Puede solo aplicar devoluciones no aceptadas de transferencia de devoluciones que están en estado \"Hecho\""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,help:stock_location_return_not_accepted.field_stock_move_origin_returned_not_accepted_move_id
+msgid "move that created the return not accepted move"
+msgstr "Movimiento que origino el movimiento de devolución no aceptada"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model,name:stock_location_return_not_accepted.model_stock_return_not_accepted_picking_line
+msgid "stock.return.not.accepted.picking.line"
+msgstr "stock.return.not.accepted.picking.line"
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_original_location_id
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_parent_location_id
+msgid "unknown"
+msgstr "Desconocido"
