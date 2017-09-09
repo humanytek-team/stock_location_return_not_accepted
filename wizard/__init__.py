@@ -20,5 +20,4 @@
 #
 ###############################################################################
 
-import models
-import wizard
+import stock_return_not_accepted_picking

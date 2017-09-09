@@ -20,5 +20,13 @@
 #
 ###############################################################################
 
-import models
-import wizard
+from openerp import fields, models
+
+
+class StockMove(models.Model):
+    _inherit='stock.move'
+
+    origin_returned_not_accepted_move_id = fields.Many2one(
+        'stock.move',
+        'Origin of return not accepted move',
+        help='move that created the return not accepted move', copy=False)    

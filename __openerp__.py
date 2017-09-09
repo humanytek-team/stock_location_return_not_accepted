@@ -33,7 +33,9 @@
     'version': '0.1.0',
     'depends': ['stock', ],
     'data': [
+        'wizard/stock_return_not_accepted_picking_view.xml',
         'views/stock_location_view.xml',
+        'views/stock_picking_view.xml',
     ],
     'demo': [
     ],

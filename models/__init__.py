@@ -20,4 +20,6 @@
 #
 ###############################################################################
 
+import stock_move
 import stock_location
+import stock_picking

@@ -20,5 +20,11 @@
 #
 ###############################################################################
 
-import models
-import wizard
+from openerp import fields, models
+
+
+class StockPicking(models.Model):
+    _inherit='stock.picking'
+
+    location_dest_return_location = fields.Boolean(
+        related='location_dest_id.return_location')
