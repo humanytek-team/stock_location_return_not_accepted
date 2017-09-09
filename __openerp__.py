@@ -30,7 +30,7 @@
     'author': "Humanytek",
     'website': "http://www.humanytek.com",
     'category': 'Stock',
-    'version': '0.1.0',
+    'version': '1.0.0',
     'depends': ['stock', ],
     'data': [
         'wizard/stock_return_not_accepted_picking_view.xml',
