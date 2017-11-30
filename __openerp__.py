@@ -36,6 +36,7 @@
         'wizard/stock_return_not_accepted_picking_view.xml',
         'views/stock_location_view.xml',
         'views/stock_picking_view.xml',
+        'views/product_quality_review_view.xml',
     ],
     'demo': [
     ],

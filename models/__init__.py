@@ -20,6 +20,7 @@
 #
 ###############################################################################
 
+import product_quality_review
 import stock_move
 import stock_location
 import stock_picking
