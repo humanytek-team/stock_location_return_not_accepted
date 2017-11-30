@@ -16,11 +16,10 @@
                   <button
                     name="%(act_stock_return_not_accepted_picking)d"
                     string="Return not accepted"
-                    states="done"
                     type="action"
                     groups="base.group_user"
-                    attrs="{'invisible': [('location_dest_return_location', '=', False)]}"/>
-                </xpath>                
+                    attrs="{'invisible': ['|', ('location_dest_return_location', '=', False), ('state', '!=', 'done')]}"/>
+                </xpath>
 
             </field>
         </record>
