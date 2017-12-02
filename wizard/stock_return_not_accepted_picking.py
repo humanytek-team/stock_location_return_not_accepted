@@ -180,6 +180,43 @@ class stock_return_not_accepted_picking(osv.osv_memory):
         if not returned_lines:
             raise UserError(_("Please specify at least one non-zero quantity."))
 
+        product_not_accepted_ids = list()
+
+        for move_id in data['product_return_not_accepted_moves']:
+
+            move = self.pool.get(
+                'stock.return.not.accepted.picking.line').browse(
+                    cr, uid, move_id, context=context)
+
+            for product_not_accepted in move.product_not_accepted_ids:
+
+                quality_review_ids = list()
+
+                for quality_review_item in product_not_accepted.quality_review_ids:
+                    quality_review_ids.append(
+                        (0, 0, {
+                            'quality_review_id': \
+                                quality_review_item.quality_review_id.id,
+                            'meet': quality_review_item.meet,
+                            })
+                        )
+
+                product_not_accepted_ids.append(
+                    (0, 0, {
+                        'product_id': product_not_accepted.product_id.id,
+                        'product_qty': product_not_accepted.product_qty,
+                        'quality_review_ids': quality_review_ids,
+                        })
+                    )
+        _logger.debug('DEBUG PRODUCTS NOT ACCEPTED %s', product_not_accepted_ids)
+        _logger.debug('DEBUG PRODUCTS NOT ACCEPTED %s', self)
+        _logger.debug('DEBUG PRODUCTS NOT ACCEPTED %s', data)
+
+        self.pool.get('stock.picking').write(
+            cr, uid, new_picking, {
+                'product_not_accepted_ids': product_not_accepted_ids
+                }, context=context)
+
         pick_obj.action_confirm(cr, uid, [new_picking], context=context)
         pick_obj.action_assign(cr, uid, [new_picking], context=context)
         return new_picking, picking_type_internal_id

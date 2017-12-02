@@ -17,4 +17,24 @@ class StockPickingProductNotAccepted(models.Model):
         digits_compute=dp.get_precision('Product Unit of Measure'),
         required=True, default=1)
     picking_id = fields.Many2one(
-        'stock.picking', string='Picking', required=True)    
+        'stock.picking', string='Picking', required=True)
+    quality_review_ids = fields.One2many(
+        'product.quality.review.product.not.accepted.rel',
+        'product_not_accepted_id',
+        string='Quality Review in Products'
+    )
+
+
+class ProductQualityReviewRel(models.Model):
+    _name = 'product.quality.review.product.not.accepted.rel'
+    _rec_name = 'quality_review_id'
+
+    product_not_accepted_id = fields.Many2one(
+        'stock.picking.product.not.accepted',
+        string="Product not accepted",
+        required=True)
+    quality_review_id = fields.Many2one(
+        'product.quality.review',
+        string='Quality review item',
+        required=True)
+    meet = fields.Boolean('Does it meet?')
