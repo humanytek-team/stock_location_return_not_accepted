@@ -14,7 +14,7 @@
                 <form>
                     <group>
                         <field name="product_return_not_accepted_moves" nolabel="1">
-                            <tree editable="top" create="0">
+                            <tree create="0">
                                 <field name="product_id" readonly="1"/>
                                 <field name="quantity"/>
                             </tree>
@@ -42,5 +42,72 @@
                 </form>
             </field>
         </record>
+
+        <record id="view_return_not_accepted_line_form" model="ir.ui.view">
+            <field name="name">Moves return not accepted</field>
+            <field name="model">stock.return.not.accepted.picking.line</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <group>
+
+                      <group>
+                        <field name="product_id" readonly="1" />
+                        <field name="quantity" />
+                      </group>
+
+                      <group>
+                        <field name="move_id" readonly="1" />
+                      </group>
+
+                    </group>
+
+                    <notebook>
+
+                      <page string="Quality Review in Products">
+
+                        <field name="product_not_accepted_ids" nolabel="1">
+
+                          <tree create="0">
+                            <field name="product_id" />
+                            <field name="product_qty" />
+                          </tree>
+
+                          <form>
+
+                            <group>
+
+                              <group>
+                                <field name="product_id" readonly="1" />
+                                <field name="product_qty" readonly="1" />
+                              </group>
+
+                            </group>
+
+                            <notebook>
+
+                              <page string="Quality Review">
+                                <field name="quality_review_ids" nolabel="1">
+                                  <tree create="0" editable="bottom">
+                                    <field name="quality_review_id" readonly="1"/>
+                                    <field name="meet" />
+                                  </tree>
+                                </field>
+                              </page>
+
+                            </notebook>
+
+                          </form>
+
+                        </field>
+
+                      </page>
+
+                    </notebook>
+
+                </form>
+            </field>
+        </record>
+
     </data>
 </openerp>

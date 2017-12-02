@@ -24,3 +24,4 @@ import product_quality_review
 import stock_move
 import stock_location
 import stock_picking
+import stock_picking_product_not_accepted
