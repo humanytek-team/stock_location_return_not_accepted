@@ -28,3 +28,11 @@ class StockPicking(models.Model):
 
     location_dest_return_location = fields.Boolean(
         related='location_dest_id.return_location')
+
+    location_dest_return_not_accepted_location = fields.Boolean(
+        related='location_dest_id.return_not_accepted_location')
+
+    product_not_accepted_ids = fields.One2many(
+        'stock.picking.product.not.accepted',
+        'picking_id',
+        'Products not accepted')
