@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0e-20170207\n"
+"Project-Id-Version: Odoo Server 9.0e-20170815\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-09 15:16+0000\n"
-"PO-Revision-Date: 2017-09-09 15:16+0000\n"
+"POT-Creation-Date: 2017-12-03 23:30+0000\n"
+"PO-Revision-Date: 2017-12-03 23:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,18 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_active
+msgid "Active"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
 #: model:ir.ui.view,arch_db:stock_location_return_not_accepted.view_stock_return_not_accepted_picking_form
 msgid "Cancel"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.ui.view,arch_db:stock_location_return_not_accepted.view_product_quality_review_form
+msgid "Charge to Supplier"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
@@ -26,26 +36,52 @@ msgid "Check this box to allow using this location as a return location."
 msgstr ""
 
 #. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_create_uid
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_product_not_accepted_rel_create_uid
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_wizard_return_not_accepted_rel_create_uid
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted_create_uid
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_create_uid
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_create_uid
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_wizard_stock_picking_product_not_accepted_create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_create_date
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_product_not_accepted_rel_create_date
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_wizard_return_not_accepted_rel_create_date
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted_create_date
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_create_date
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_create_date
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_wizard_stock_picking_product_not_accepted_create_date
 msgid "Created on"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_display_name
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_product_not_accepted_rel_display_name
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_wizard_return_not_accepted_rel_display_name
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted_display_name
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_display_name
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_display_name
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_wizard_stock_picking_product_not_accepted_display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_product_not_accepted_rel_meet
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_wizard_return_not_accepted_rel_meet
+msgid "Does it meet?"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_id
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_product_not_accepted_rel_id
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_wizard_return_not_accepted_rel_id
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted_id
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_id
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_id
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_wizard_stock_picking_product_not_accepted_id
 msgid "ID"
 msgstr ""
 
@@ -61,25 +97,46 @@ msgstr ""
 
 #. module: stock_location_return_not_accepted
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_location_return_not_accepted_location
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_location_dest_return_not_accepted_location
 msgid "Is a location of returns not accepted ?"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review___last_update
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_product_not_accepted_rel___last_update
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_wizard_return_not_accepted_rel___last_update
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted___last_update
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking___last_update
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line___last_update
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_wizard_stock_picking_product_not_accepted___last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_product_not_accepted_rel_write_uid
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_wizard_return_not_accepted_rel_write_uid
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_write_uid
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted_write_uid
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_write_uid
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_write_uid
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_wizard_stock_picking_product_not_accepted_write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_product_not_accepted_rel_write_date
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_wizard_return_not_accepted_rel_write_date
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_write_date
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted_write_date
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_write_date
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_write_date
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_wizard_stock_picking_product_not_accepted_write_date
 msgid "Last Updated on"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_wizard_stock_picking_product_not_accepted_wizard_return_not_accepted_line_id
+msgid "Line of Wizard Return Not Accepted"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
@@ -98,7 +155,13 @@ msgid "Moves"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
-#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:74
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_name
+#: model:ir.ui.view,arch_db:stock_location_return_not_accepted.view_product_quality_review_form
+msgid "Name"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:79
 #, python-format
 msgid "No products to return (only lines in Done state and not fully returned yet can be returned)!"
 msgstr ""
@@ -109,29 +172,76 @@ msgid "Origin of return not accepted move"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted_picking_id
+msgid "Picking"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
 #: model:ir.model,name:stock_location_return_not_accepted.model_stock_return_not_accepted_picking
 msgid "Picking of return not accepted"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
-#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:171
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:241
 #, python-format
 msgid "Picking of returns not accepted"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
-#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:148
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:181
 #, python-format
 msgid "Please specify at least one non-zero quantity."
 msgstr ""
 
 #. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted_product_id
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_product_id
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_wizard_stock_picking_product_not_accepted_product_id
 msgid "Product"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_product_not_accepted_rel_product_not_accepted_id
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_wizard_return_not_accepted_rel_product_not_accepted_id
+msgid "Product not accepted"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted_ids
+#: model:ir.ui.view,arch_db:stock_location_return_not_accepted.view_picking_return_not_accepted_form
+msgid "Products not accepted"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.ui.view,arch_db:stock_location_return_not_accepted.view_picking_return_not_accepted_form
+#: model:ir.ui.view,arch_db:stock_location_return_not_accepted.view_return_not_accepted_line_form
+msgid "Quality Review"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.actions.act_window,name:stock_location_return_not_accepted.action_product_quality_review
+#: model:ir.ui.menu,name:stock_location_return_not_accepted.menu_product_quality_review
+msgid "Quality Review Points"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted_quality_review_ids
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_product_not_accepted_ids
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_wizard_stock_picking_product_not_accepted_quality_review_ids
+#: model:ir.ui.view,arch_db:stock_location_return_not_accepted.view_return_not_accepted_line_form
+msgid "Quality Review in Products"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_product_not_accepted_rel_quality_review_id
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_product_quality_review_wizard_return_not_accepted_rel_quality_review_id
+msgid "Quality review item"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_picking_product_not_accepted_product_qty
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_line_quantity
+#: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_wizard_stock_picking_product_not_accepted_product_qty
 msgid "Quantity"
 msgstr ""
 
@@ -162,19 +272,19 @@ msgid "Wizard"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
-#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:122
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:155
 #, python-format
 msgid "You have manually created product lines, please delete them to proceed"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
-#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:48
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:53
 #, python-format
 msgid "You may only apply returns not accepted of one return picking at a time!"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
-#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:58
+#: code:addons/stock_location_return_not_accepted/wizard/stock_return_not_accepted_picking.py:63
 #, python-format
 msgid "You may only apply returns not accepted of return pickings that are Done!"
 msgstr ""
@@ -182,6 +292,26 @@ msgstr ""
 #. module: stock_location_return_not_accepted
 #: model:ir.model.fields,help:stock_location_return_not_accepted.field_stock_move_origin_returned_not_accepted_move_id
 msgid "move that created the return not accepted move"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model,name:stock_location_return_not_accepted.model_product_quality_review
+msgid "product.quality.review"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model,name:stock_location_return_not_accepted.model_product_quality_review_product_not_accepted_rel
+msgid "product.quality.review.product.not.accepted.rel"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model,name:stock_location_return_not_accepted.model_product_quality_review_wizard_return_not_accepted_rel
+msgid "product.quality.review.wizard.return.not.accepted.rel"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model,name:stock_location_return_not_accepted.model_stock_picking_product_not_accepted
+msgid "stock.picking.product.not.accepted"
 msgstr ""
 
 #. module: stock_location_return_not_accepted
@@ -193,5 +323,10 @@ msgstr ""
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_original_location_id
 #: model:ir.model.fields,field_description:stock_location_return_not_accepted.field_stock_return_not_accepted_picking_parent_location_id
 msgid "unknown"
+msgstr ""
+
+#. module: stock_location_return_not_accepted
+#: model:ir.model,name:stock_location_return_not_accepted.model_wizard_stock_picking_product_not_accepted
+msgid "wizard.stock.picking.product.not.accepted"
 msgstr ""
 

@@ -13,12 +13,58 @@
                   position="after">
 
                   <field name="location_dest_return_location" invisible="1"/>
+                  <field name="location_dest_return_not_accepted_location"
+                    invisible="1" />
                   <button
                     name="%(act_stock_return_not_accepted_picking)d"
                     string="Return not accepted"
                     type="action"
                     groups="base.group_user"
                     attrs="{'invisible': ['|', ('location_dest_return_location', '=', False), ('state', '!=', 'done')]}"/>
+                </xpath>
+
+                <xpath expr="//notebook" position="inside">
+
+                  <page string="Products not accepted"
+                    attrs="{'invisible': [('location_dest_return_not_accepted_location', '=', False)]}" >
+
+                    <field name="product_not_accepted_ids" nolabel="1">
+
+                      <tree create="0">
+                        <field name="product_id" />
+                        <field name="product_qty" />
+                      </tree>
+
+                      <form>
+
+                        <group>
+
+                          <group>
+                            <field name="product_id" readonly="1" />
+                            <field name="product_qty" readonly="1" />
+                          </group>
+
+                        </group>
+
+                        <notebook>
+
+                          <page string="Quality Review">
+                            <field name="quality_review_ids" nolabel="1">
+                              <tree create="0" editable="bottom">
+                                <field name="quality_review_id" readonly="1"/>
+                                <field name="meet" />
+                              </tree>
+                            </field>
+                          </page>
+
+                        </notebook>
+
+                      </form>
+
+                    </field>
+
+                  </page>
+
                 </xpath>
 
             </field>
