@@ -5,7 +5,8 @@ from openerp.osv import osv, fields
 from openerp.tools.translate import _
 import openerp.addons.decimal_precision as dp
 from openerp.exceptions import UserError
-
+import logging
+_logger = logging.getLogger(__name__)
 class stock_return_not_accepted_picking_line(osv.osv_memory):
     _name = "stock.return.not.accepted.picking.line"
     _rec_name = 'product_id'
@@ -15,6 +16,10 @@ class stock_return_not_accepted_picking_line(osv.osv_memory):
         'quantity': fields.float("Quantity", digits_compute=dp.get_precision('Product Unit of Measure'), required=True),
         'wizard_id': fields.many2one('stock.return.not.accepted.picking', string="Wizard"),
         'move_id': fields.many2one('stock.move', "Move"),
+        'product_not_accepted_ids': fields.one2many(
+            'wizard.stock.picking.product.not.accepted',
+            'wizard_return_not_accepted_line_id',
+            'Quality Review in Products')
     }
 
 
@@ -72,8 +77,36 @@ class stock_return_not_accepted_picking(osv.osv_memory):
 
             if len(result1) == 0:
                 raise UserError(_("No products to return (only lines in Done state and not fully returned yet can be returned)!"))
+
             if 'product_return_not_accepted_moves' in fields:
+
+                ProductQualityReview = self.pool.get('product.quality.review')
+                quality_review_items = ProductQualityReview.search(
+                    cr, uid, [], context=context)
+                quality_review_ids = list()
+
+                for item_id in quality_review_items:
+                    quality_review_ids.append(
+                        (0, 0, {'quality_review_id': item_id})
+                    )
+
+                for record in result1:
+                    data = record[2]
+                    product_id = data['product_id']
+                    product_qty = data['quantity']
+                    data['product_not_accepted_ids'] = list()
+
+                    for unit in range(int(product_qty)):
+                        data['product_not_accepted_ids'].append(
+                            (0, 0, {
+                                'product_id': product_id,
+                                'product_qty': 1,
+                                'quality_review_ids': quality_review_ids,
+                                })
+                            )
+
                 res.update({'product_return_not_accepted_moves': result1})
+
             if 'parent_location_id' in fields and pick.location_id.usage == 'internal':
                 res.update({'parent_location_id':pick.picking_type_id.warehouse_id and pick.picking_type_id.warehouse_id.view_location_id.id or pick.location_id.location_id.id})
             if 'original_location_id' in fields:
@@ -147,6 +180,43 @@ class stock_return_not_accepted_picking(osv.osv_memory):
         if not returned_lines:
             raise UserError(_("Please specify at least one non-zero quantity."))
 
+        product_not_accepted_ids = list()
+
+        for move_id in data['product_return_not_accepted_moves']:
+
+            move = self.pool.get(
+                'stock.return.not.accepted.picking.line').browse(
+                    cr, uid, move_id, context=context)
+
+            for product_not_accepted in move.product_not_accepted_ids:
+
+                quality_review_ids = list()
+
+                for quality_review_item in product_not_accepted.quality_review_ids:
+                    quality_review_ids.append(
+                        (0, 0, {
+                            'quality_review_id': \
+                                quality_review_item.quality_review_id.id,
+                            'meet': quality_review_item.meet,
+                            })
+                        )
+
+                product_not_accepted_ids.append(
+                    (0, 0, {
+                        'product_id': product_not_accepted.product_id.id,
+                        'product_qty': product_not_accepted.product_qty,
+                        'quality_review_ids': quality_review_ids,
+                        })
+                    )
+        _logger.debug('DEBUG PRODUCTS NOT ACCEPTED %s', product_not_accepted_ids)
+        _logger.debug('DEBUG PRODUCTS NOT ACCEPTED %s', self)
+        _logger.debug('DEBUG PRODUCTS NOT ACCEPTED %s', data)
+
+        self.pool.get('stock.picking').write(
+            cr, uid, new_picking, {
+                'product_not_accepted_ids': product_not_accepted_ids
+                }, context=context)
+
         pick_obj.action_confirm(cr, uid, [new_picking], context=context)
         pick_obj.action_assign(cr, uid, [new_picking], context=context)
         return new_picking, picking_type_internal_id
@@ -176,3 +246,43 @@ class stock_return_not_accepted_picking(osv.osv_memory):
             'type': 'ir.actions.act_window',
             'context': ctx,
         }
+
+
+class WizardStockPickingProductNotAccepted(osv.osv_memory):
+    _name = 'wizard.stock.picking.product.not.accepted'
+    _rec_name = 'product_id'
+
+    _columns = {
+        'product_id': fields.many2one(
+            'product.product', string="Product", required=True),
+        'product_qty': fields.float(
+            "Quantity",
+            digits_compute=dp.get_precision('Product Unit of Measure'),
+            required=True, default=1),
+        'wizard_return_not_accepted_line_id': fields.many2one(
+            'stock.return.not.accepted.picking.line',
+            string='Line of Wizard Return Not Accepted',
+            required=True),
+        'quality_review_ids': fields.one2many(
+            'product.quality.review.wizard.return.not.accepted.rel',
+            'product_not_accepted_id',
+            string='Quality Review in Products'
+        )
+        }
+
+
+class ProductQualityReviewWizardRel(osv.osv_memory):
+    _name = 'product.quality.review.wizard.return.not.accepted.rel'
+    _rec_name = 'quality_review_id'
+
+    _columns = {
+        'product_not_accepted_id': fields.many2one(
+            'wizard.stock.picking.product.not.accepted',
+            string="Product not accepted",
+            required=True),
+        'quality_review_id': fields.many2one(
+            'product.quality.review',
+            string='Quality review item',
+            required=True),
+        'meet': fields.boolean('Does it meet?')
+    }
