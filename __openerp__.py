@@ -30,9 +30,10 @@
     'author': "Humanytek",
     'website': "http://www.humanytek.com",
     'category': 'Stock',
-    'version': '1.1.0',
+    'version': '1.1.1',
     'depends': ['stock', ],
     'data': [
+        'security/ir.model.access.csv',
         'wizard/stock_return_not_accepted_picking_view.xml',
         'views/stock_location_view.xml',
         'views/stock_picking_view.xml',
