@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.1.1] - 2017-12-08
+### added
+- Adds access rights.
+
 ## [1.1.0] - 2017-12-03
 ### added
 - Adds new workflow for quality reviews in products of returns not accepted.
